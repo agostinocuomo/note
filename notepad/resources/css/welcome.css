@@ -1,0 +1,128 @@
+
+.textarea-carta {
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60vh;
+
+  /* Carta riciclata */
+  background-color: #f5f1e6;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 22px,
+      rgba(0, 0, 0, 0.642) 23px
+    );
+
+  /* Testo */
+  font-family: "Courier New", monospace;
+ font-size: 18px;
+  line-height: 23px;      /* distanza tra le righe */
+  padding-top: 10px;     /* deve essere multiplo o sottomultiplo */
+  padding-left: 20px;
+  color: #3b3b3b;
+
+  /* Spaziatura */
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Bordo soft */
+  border: 1px solid #d6cfc2;
+  border-radius: 6px;
+
+  /* Comportamento */
+  resize: none;
+  outline: none;
+  overflow-y: auto;
+
+
+
+  background-attachment: local; /* 🔥 FONDAMENTALE */
+  /* Effetto carta */
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+}      
+
+.nav-tabs{
+   position: absolute;
+    top: 15%;
+    left: 10%;
+   
+   
+  width: 80%;
+     background-color:  #7F6238;
+     border-bottom: 2px solid #5a4632;
+     background-color: #EFE6D8; /* carta */
+color: #B89B72;           /* legno */
+border-color: #A68A5B;
+background-color: #EFE6D8; /* carta riciclata */
+  color: #5A4630;
+
+  border: 2px solid #7F6238;
+
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      rgba(255, 255, 255, 0.04) 2px,
+      rgba(255, 255, 255, 0.04) 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #B99663,
+      #9B7A4A
+    );
+}
+
+.nav-tabs::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.02);
+  pointer-events: none;
+}
+
+             
+
+
+
+
+
+
+.post-it {
+      width: 200px;             /* larghezza massima */
+    max-width: 200px;         
+    height: 150px;            /* altezza fissa */
+    max-height: 150px; 
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.25);
+
+    font-family: 'Comic Sans MS', 'Segoe UI', cursive;
+    font-size: 15px;
+    line-height: 1.4;
+
+    resize: none;
+  outline: none;
+  overflow-y: auto;
+
+
+   white-space: pre-wrap;    /* importante: mantiene gli a capo e va a capo */
+    word-wrap: break-word;    /* forza la rottura di parole troppo lunghe */
+    overflow-wrap: break-word;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.post-it:hover {
+    transform: scale(1.03) rotate(0deg);
+    transition: 0.2s ease;
+}
+
+
