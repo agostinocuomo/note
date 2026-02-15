@@ -48,9 +48,9 @@ new class extends Component
         </li>
       </ul>
     </div>
-      <button type="button" class="btn btn-success m-2 float-end">Logins</button>
-       <button type="button" class="btn btn-success m-2
-        float-end">Register</button>
+                <a href="{{ route('login') }}" class="btn btn-success m-2 float-end">Login</a>
+            <a href="{{ route('register') }}" class="btn btn-primary float-end">Register</a>
+
   </div>
 </nav>
 

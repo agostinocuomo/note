@@ -124,6 +124,8 @@ return [
     ],
 
 
+  App\Providers\FortifyServiceProvider::class,
   
+
 
 ];

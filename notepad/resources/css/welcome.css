@@ -89,10 +89,23 @@ background-color: #EFE6D8; /* carta riciclata */
 
 
 
-
+.postit-container{
+  position: relative; 
+   /*  display: flex;
+   flex-wrap: wrap;  */
+    display: grid; /* o flex */
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 20px;
+    position: relative; /* fondamentale */
+    width: 100%;
+    height: 600px;     
+   
+}
 
 
 .post-it {
+
+  cursor:grab;
       width: 200px;             /* larghezza massima */
     max-width: 200px;         
     height: 150px;            /* altezza fissa */
@@ -113,15 +126,19 @@ background-color: #EFE6D8; /* carta riciclata */
    white-space: pre-wrap;    /* importante: mantiene gli a capo e va a capo */
     word-wrap: break-word;    /* forza la rottura di parole troppo lunghe */
     overflow-wrap: break-word;
+   
 
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+      user-select: none;
+       transition: transform 0.1s;
 }
 
 
 .post-it:hover {
-    transform: scale(1.03) rotate(0deg);
+    transform: scale(1.4) rotate(0deg);
     transition: 0.2s ease;
 }
 

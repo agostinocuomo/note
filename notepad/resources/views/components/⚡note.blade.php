@@ -29,6 +29,9 @@ new class extends Component
     Anonimu::create([
         'note' => $this->note,
     ]);
+   
+   
+
 
     session()->put('notes', $this->notes);
     $this->note = '';
