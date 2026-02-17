@@ -8,12 +8,24 @@ class NotepadController extends Controller
 {
     public function index(Request $request)
     {
-        session(['user_id' => 123, 'username' => 'john_doe']);
+      
+         if (auth()->check()) {
+        $user = auth()->user();
+    } else {
+        $user = null;
+    }
         $notes= '';
         $notes = $request->session()->get('notes', []);
         return view('welcome', compact('notes'));
     }
 
+    public function userAuth(){
+        if (auth()->check()) {
+    $user = auth()->user();
+}
+
+        return view('log.homeAuth');
+    }
    /*  public function store(Request $request)
     {
 

@@ -88,8 +88,6 @@ document.addEventListener("mouseup", function() {
         activeNote.style.cursor = "grab";
         activeNote = null;
     }
- 
-
-     
+    
 });
 </script>

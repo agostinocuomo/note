@@ -69,14 +69,12 @@ new class extends Component
 
 ?>
 
-<div>
+<div >
 
-  @if (session('success'))
-        <p style="color:green">{{ session('success') }}</p>
-  @endif
-
-    <form wire:submit.prevent="store">        
-        <ul class="nav nav-tabs nav-tabs-legno">
+ 
+  
+    <form wire:submit.prevent="store" class="form-note ">        
+        <ul class="nav nav-tabs nav-tabs-legno mt-5">
   <li class="nav-item">
     <a class="nav-link " aria-current="page" href="#">MAIUSC</a>
   </li>
@@ -90,12 +88,14 @@ new class extends Component
       <button type="submit" wire:submit.prevent="store" class="nav-link">Salva</button>
   </li>
 </ul>
-<textarea   wire:model.defer="note" class="textarea-carta" placeholder="Scrivi qui..." ></textarea>
+<textarea   wire:model.defer="note" class="textarea-carta mt-5" placeholder="Scrivi qui..." ></textarea>
     </form>  
-
-        @error('note')
-            <span style="color:red">{{ $message }}</span>
+      @if (session('success'))
+        <p style="color:green">{{ session('success') }}</p>
+  @endif
+ @error('note')
+            <span style="color:red; position:absolute; ">{{ $message }}</span>
         @enderror
 </div>
-
+ 
 

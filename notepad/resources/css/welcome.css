@@ -1,4 +1,8 @@
 
+
+
+
+
 .textarea-carta {
    position: absolute;
     top: 50%;
@@ -83,6 +87,32 @@ background-color: #EFE6D8; /* carta riciclata */
   inset: 0;
   background: rgba(0,0,0,0.02);
   pointer-events: none;
+}
+
+.navbar{
+     background-color:  #7F6238;
+     border-bottom: 2px solid #5a4632;
+     background-color: #EFE6D8; /* carta */
+color: #B89B72;           /* legno */
+border-color: #A68A5B;
+background-color: #EFE6D8; /* carta riciclata */
+  color: #5A4630;
+
+  border: 2px solid #7F6238;
+
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      rgba(255, 255, 255, 0.04) 2px,
+      rgba(255, 255, 255, 0.04) 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #B99663,
+      #9B7A4A
+    );
 }
 
              
