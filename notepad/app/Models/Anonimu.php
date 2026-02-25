@@ -13,7 +13,12 @@ class Anonimu extends Model
 
      protected $fillable = [
         'note', // qui aggiungi tutte le colonne che vuoi aggiornare da Livewire
+        'user_id'
     ];
   
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
     
 }

@@ -36,16 +36,25 @@ new class extends Component
     </button>
     <div class="collapse navbar-collapse " id="navbarNav">
       <ul class="navbar-nav">
+         @if(auth()->check())
         <li class="nav-item">
-           <button type="button" class="nav-link active" wire:click="mostraA">
-        NotePad
-           </button>
+         <a type="button" class="nav-link active" href="{{ route('UserDashboard') }}">
+          Note Salvate
+         </a>
         </li>
+        @else
         <li class="nav-item">
          <button type="button" class="nav-link active" wire:click="mostraB">
         Note Salvate
          </button>
         </li>
+          @endif
+          <li class="nav-item">
+           <button type="button" class="nav-link active" wire:click="mostraA">
+        NotePad
+           </button>
+        </li>
+        
       </ul>
     </div>
               @guest 
@@ -59,7 +68,12 @@ new class extends Component
       </div>
       @endguest
       @auth
-      <a type="button" class="btn btn-danger" href="{{ route('logout') }}">Logout</a>
+      <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <button type="submit" class="btn btn-outline-danger">
+        <i class="bi bi-box-arrow-right"></i> Logout
+    </button>
+</form>
       @endauth
   </div>
 </nav>

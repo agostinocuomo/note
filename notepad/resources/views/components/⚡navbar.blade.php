@@ -46,7 +46,12 @@ public function mostraA()
       @endguest
       
       @auth
-      <a type="button" class="btn btn-danger" href="{{ route('logout') }}">Logout</a>
+    <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <button type="submit" class="btn btn-outline-danger">
+        <i class="bi bi-box-arrow-right"></i> Logout
+    </button>
+    </form>
       @endauth
     </div>
 

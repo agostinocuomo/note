@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'firstname',
+        'lastname',
+        'zip',
+        'city'
     ];
 
     /**
@@ -45,4 +49,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function anonimu()
+{
+    return $this->hasMany(Post::class);
+}
 }

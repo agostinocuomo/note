@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class NotepadController extends Controller
 {
+    public function dashboard()
+{
+    $user = auth()->user();
+    $posts = $user->posts; // prende solo i suoi post
+
+    return view('auth.dashboard', compact('posts'));
+}
     public function index(Request $request)
     {
       

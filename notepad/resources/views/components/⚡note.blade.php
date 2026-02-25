@@ -28,6 +28,7 @@ new class extends Component
 
     Anonimu::create([
         'note' => $this->note,
+        'user_id' => auth()->id(),  
     ]);
    
    
