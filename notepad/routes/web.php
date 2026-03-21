@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NotepadController;
 use App\Http\Livewire\Dashboard;
 
-Route::get('/', [NotepadController::class, 'index'])->name("welcome");
-Route::post('/welcome', [NotepadController::class, 'store']);
+Route::get('/welcome', [NotepadController::class, 'index'])->name("welcome");
+Route::post('/welcomeP', [NotepadController::class, 'store']);
 
 
 Route::middleware(['auth'])->group(function () {

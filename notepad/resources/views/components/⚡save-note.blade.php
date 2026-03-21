@@ -43,6 +43,7 @@ $colors = ['#FFF59D','#FFCCBC','#C8E6C9','#BBDEFB','#F8BBD0','#E1BEE7'];
      <div class="post-it" style="background-color: {{ $colors[$i % count($colors)] }};" >
             <p>{{ $text }}</p>
             <small>{{ $time }}</small>
+              <button class="show-btn">Apri Grande</button>
         </div>
         
     @endforeach

@@ -77,10 +77,12 @@ new class extends Component
     <form wire:submit.prevent="store" class="form-note ">        
         <ul class="nav nav-tabs nav-tabs-legno mt-5">
   <li class="nav-item">
-    <a class="nav-link " aria-current="page" href="#">MAIUSC</a>
+    <button class="nav-link" type="button" onclick="toUppercaseSelection()">
+    MAIUSC
+</button>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">COLOR</a>
+    <button class="nav-link" type="button" onclick="toLowercaseSelection()">Minuscolo</button>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">TOOL</a>
@@ -89,7 +91,7 @@ new class extends Component
       <button type="submit" wire:submit.prevent="store" class="nav-link">Salva</button>
   </li>
 </ul>
-<textarea   wire:model.defer="note" class="textarea-carta mt-5" placeholder="Scrivi qui..." ></textarea>
+<textarea  id="myTextarea"  wire:model.defer="note" class="textarea-carta mt-5" placeholder="Scrivi qui..." ></textarea>
     </form>  
       @if (session('success'))
         <p style="color:green">{{ session('success') }}</p>
@@ -99,4 +101,49 @@ new class extends Component
         @enderror
 </div>
  
+<script>
+window.toUppercaseSelection = function() {
+    const textarea = document.getElementById('myTextarea');
+    if (!textarea) {
+        alert("Textarea non trovata!");
+        return;
+    }
 
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+
+    if (start === end) {
+        alert("Seleziona del testo prima!");
+        return;
+    }
+
+    const text = textarea.value;
+    const selected = text.substring(start, end);
+    const upper = selected.toUpperCase();
+
+    textarea.value = text.substring(0, start) + upper + text.substring(end);
+
+    textarea.selectionStart = start;
+    textarea.selectionEnd = start + upper.length;
+    textarea.focus();
+}
+
+ window.toLowercaseSelection = function() {
+        const textarea = document.getElementById('myTextarea');
+        if (!textarea) return alert("Textarea non trovata!");
+
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+
+        if (start === end) return alert("Seleziona del testo prima!");
+
+        const text = textarea.value;
+        const selected = text.substring(start, end);
+        const lower = selected.toLowerCase();
+
+        textarea.value = text.substring(0, start) + lower + text.substring(end);
+        textarea.selectionStart = start;
+        textarea.selectionEnd = start + lower.length;
+        textarea.focus();
+    }
+</script>
